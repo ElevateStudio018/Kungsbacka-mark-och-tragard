@@ -6,9 +6,12 @@ Statisk sajt (HTML/CSS/JS, inga byggsteg). Öppna `index.html` direkt eller kör
 python3 -m http.server 8000
 ```
 
+Designen följer anlab.se: Montserrat, petrolblått (#023845), ljust blågrå och ljusgrå
+sektioner, vita tjänstekort, grön cirkel, fyrkantiga knappar och centrerad petrolfärgad footer.
+
 ## Sidor
-- `index.html` – startsida: hero, om oss, tjänster, arbetsgång, urval av referenser, område, offertformulär
-- `referenser.html` – referensgalleri med filter och bildvisning (lightbox)
+- `index.html` – startsida: hero, välkommen/kontakta oss, tjänstekort, varför välja oss, referenser, offertformulär
+- `referenser.html` – referensprojekt som kort med filter och bildvisning (lightbox)
 
 ## Innehåll
 Texter och kontaktuppgifter kommer från markarbetevarberg.com / kungsbackamark.com
@@ -24,6 +27,6 @@ Texter och kontaktuppgifter kommer från markarbetevarberg.com / kungsbackamark.
 3. Kontrollera orterna under "Område" och att ROT/RUT-texten stämmer för era tjänster.
 
 ## Pexels-bilder som används
-95687, 5125783, 129544, 16239805, 6095810, 7587879, 24595771, 36866669, 7061672,
-7546775, 280222, 5231236, 3575827, 7813043, 34400606, 32112822
+95687, 5125783, 16239805, 6095810, 7587879, 24595771, 36866669, 7061672,
+7546775, 280222, 5231236, 3575827, 32112822, 7788227
 (`https://www.pexels.com/photo/<id>/`)

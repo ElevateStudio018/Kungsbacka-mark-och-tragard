@@ -1,15 +1,5 @@
 (function () {
-  var header = document.querySelector('.site-header');
   var body = document.body;
-
-  // Header blir solid när man scrollat förbi hero
-  if (header && !header.classList.contains('is-light')) {
-    var onScroll = function () {
-      header.classList.toggle('is-solid', window.scrollY > 40);
-    };
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-  }
 
   // Mobilmeny
   var toggle = document.querySelector('.menu-toggle');
@@ -26,7 +16,16 @@
     });
   }
 
-  // Inglidning
+  // Till toppen
+  var top = document.querySelector('.to-top');
+  if (top) {
+    var onScroll = function () { top.classList.toggle('show', window.scrollY > 600); };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    top.addEventListener('click', function () { window.scrollTo({ top: 0 }); });
+  }
+
+  // Intoning
   var reveals = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
@@ -62,23 +61,24 @@
     var show = function (i) {
       var list = visible();
       current = (i + list.length) % list.length;
-      var fig = list[current];
-      var img = fig.querySelector('img');
-      lbImg.src = fig.dataset.full || img.src;
+      var card = list[current];
+      var img = card.querySelector('img');
+      lbImg.src = card.dataset.full || img.src;
       lbImg.alt = img.alt;
-      lbCap.textContent = fig.querySelector('figcaption') ? fig.querySelector('figcaption').innerText.replace(/\n+/g, ' · ') : '';
+      var h = card.querySelector('h3');
+      lbCap.textContent = h ? h.textContent : '';
     };
-    var open = function (fig) {
-      show(visible().indexOf(fig));
+    var open = function (card) {
+      show(visible().indexOf(card));
       lb.classList.add('open');
       body.style.overflow = 'hidden';
       lb.querySelector('.lb-close').focus();
     };
     var close = function () { lb.classList.remove('open'); body.style.overflow = ''; };
-    refs.forEach(function (fig) {
-      fig.setAttribute('tabindex', '0');
-      fig.addEventListener('click', function () { open(fig); });
-      fig.addEventListener('keydown', function (e) { if (e.key === 'Enter') open(fig); });
+    refs.forEach(function (card) {
+      card.setAttribute('tabindex', '0');
+      card.addEventListener('click', function () { open(card); });
+      card.addEventListener('keydown', function (e) { if (e.key === 'Enter') open(card); });
     });
     lb.querySelector('.lb-close').addEventListener('click', close);
     lb.querySelector('.lb-prev').addEventListener('click', function () { show(current - 1); });
@@ -108,9 +108,8 @@
         'Ort: ' + (d.get('ort') || '-') + '\n' +
         'Gäller: ' + tjanster + '\n\n' +
         (d.get('meddelande') || '');
-      var subject = 'Offertförfrågan – ' + tjanster;
       window.location.href = 'mailto:anders@kungsbackamark.com?subject=' +
-        encodeURIComponent(subject) + '&body=' + encodeURIComponent(text);
+        encodeURIComponent('Offertförfrågan – ' + tjanster) + '&body=' + encodeURIComponent(text);
       var status = form.querySelector('.form-status');
       if (status) status.textContent = 'Tack! Ditt e-postprogram öppnas med förfrågan ifylld – tryck skicka så hör vi av oss.';
     });

@@ -18,8 +18,12 @@
 
   // Till toppen
   var top = document.querySelector('.to-top');
+  var fab = document.querySelector('.call-fab');
   if (top) {
-    var onScroll = function () { top.classList.toggle('show', window.scrollY > 600); };
+    var onScroll = function () {
+      top.classList.toggle('show', window.scrollY > 600);
+      if (fab) fab.classList.toggle('show', window.scrollY > 300);
+    };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     top.addEventListener('click', function () { window.scrollTo({ top: 0 }); });

@@ -11,9 +11,9 @@ Redigera **aldrig** `.html`-filerna i roten direkt – de skrivs över. Ändra i
 - `build.py` – sidhuvud, meny, sidfot, kontaktuppgifter och sidlista (titlar/beskrivningar)
 - `src/pages/<sida>.html` – respektive sidas innehåll (`{{PHONE}}`, `{{PHONE_TEL}}`, `{{EMAIL}}` ersätts vid bygget)
 
-Designen följer anlab.se: Montserrat, petrolblått (#023845), ljust blågrå och ljusgrå
-sektioner, vita kort, grön cirkel, fyrkantiga knappar och petrolfärgad footer – med en
-koncernstruktur: informationsrad, verksamhetsområden med egna sidor, faktablad för
+Designen utgår från anlab.se: Montserrat, skiffergrönt (#173a35), salviagröna och varmgrå
+sektioner, vita kort, fyrkantiga knappar och mörk footer – med en
+koncernstruktur: informationsrad, helskärms-hero med verksamhetsrad, verksamhetsområden med egna sidor, faktablad för
 referensprojekt, bolagsfakta och kontaktpersonkort.
 
 ## Sidor

@@ -1,17 +1,26 @@
 # Kungsbacka Mark & Trädgård – ny webbplats
 
-Statisk sajt (HTML/CSS/JS, inga byggsteg). Öppna `index.html` direkt eller kör en lokal server:
+Statisk sajt (HTML/CSS/JS). Sidorna byggs från `src/pages/` med ett litet skript:
 
 ```
+python3 build.py          # bygger alla .html-filer i roten
 python3 -m http.server 8000
 ```
 
+Redigera **aldrig** `.html`-filerna i roten direkt – de skrivs över. Ändra i stället:
+- `build.py` – sidhuvud, meny, sidfot, kontaktuppgifter och sidlista (titlar/beskrivningar)
+- `src/pages/<sida>.html` – respektive sidas innehåll (`{{PHONE}}`, `{{PHONE_TEL}}`, `{{EMAIL}}` ersätts vid bygget)
+
 Designen följer anlab.se: Montserrat, petrolblått (#023845), ljust blågrå och ljusgrå
-sektioner, vita tjänstekort, grön cirkel, fyrkantiga knappar och centrerad petrolfärgad footer.
+sektioner, vita kort, grön cirkel, fyrkantiga knappar och petrolfärgad footer – med en
+koncernstruktur: informationsrad, verksamhetsområden med egna sidor, faktablad för
+referensprojekt, bolagsfakta och kontaktpersonkort.
 
 ## Sidor
-- `index.html` – startsida: hero, välkommen/kontakta oss, tjänstekort, varför välja oss, referenser, offertformulär
-- `referenser.html` – referensprojekt som kort med filter och bildvisning (lightbox)
+- `index.html` – startsida
+- `verksamhet.html` – översikt, samt `markarbeten`, `dranering`, `stensattning`, `bygg`, `tradgard`
+- `referenser.html` – referensprojekt med filter och bildvisning
+- `kvalitet-miljo.html`, `om-oss.html`, `kontakt.html` (offertformulär), `integritetspolicy.html`
 
 ## Innehåll
 Texter och kontaktuppgifter kommer från markarbetevarberg.com / kungsbackamark.com
@@ -24,7 +33,9 @@ Texter och kontaktuppgifter kommer från markarbetevarberg.com / kungsbackamark.
 2. **Formulär.** Offertformuläret öppnar besökarens e-postprogram med förfrågan ifylld
    (`assets/js/main.js`). För att ta emot förfrågningar direkt, koppla formuläret till
    t.ex. Formspree eller Netlify Forms.
-3. Kontrollera orterna under "Område" och att ROT/RUT-texten stämmer för era tjänster.
+3. Kontrollera texterna: ROT/RUT, F-skatt, Anders som kontaktperson, tjänstelistorna per
+   verksamhetsområde och "Moment" i referensprojektens faktablad (de beskriver exempelbilderna).
+4. Har ni certifikat, medlemskap eller kreditrating – byt ut de tre symbolerna i förtroenderaden mot riktiga logotyper.
 
 ## Pexels-bilder som används
 95687, 5125783, 16239805, 6095810, 7587879, 24595771, 36866669, 7061672,

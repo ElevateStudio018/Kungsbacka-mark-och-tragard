@@ -103,6 +103,7 @@
       var tjanster = d.getAll('tjanst').join(', ') || 'Ej angivet';
       var text =
         'Namn: ' + d.get('namn') + '\n' +
+        (d.get('foretag') ? 'Företag/förening: ' + d.get('foretag') + '\n' : '') +
         'Telefon: ' + d.get('telefon') + '\n' +
         'E-post: ' + (d.get('epost') || '-') + '\n' +
         'Ort: ' + (d.get('ort') || '-') + '\n' +

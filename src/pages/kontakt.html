@@ -1,0 +1,82 @@
+  <section class="hero small">
+    <img src="assets/img/p-280222.jpg" alt="Villa med stor gräsmatta" fetchpriority="high">
+    <div class="wrap">
+      <div class="hero-text">
+        <p class="crumbs"><a href="index.html">Start</a> <span>/</span> Kontakt</p>
+        <h1>Kontakt</h1>
+        <p>Kontakta oss för platsbesök och offert. Vi återkommer så snart vi kan.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-grey center">
+    <div class="wrap">
+      <h2 class="h-section dark reveal">Kontaktuppgifter</h2>
+      <div class="offices">
+        <div class="office reveal">
+          <h3>Huvudkontor Veddige</h3>
+          <p>Veddigevägen 253<br>432 66 Veddige<br><a href="https://www.google.com/maps/search/?api=1&amp;query=Veddigev%C3%A4gen+253+432+66+Veddige" target="_blank" rel="noopener">Visa på karta</a></p>
+        </div>
+        <div class="office reveal">
+          <h3>Telefon & e-post</h3>
+          <p><a href="tel:{{PHONE_TEL}}">{{PHONE}}</a><br><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+        </div>
+        <div class="office reveal">
+          <h3>Kontaktperson</h3>
+          <p>Anders<br><a href="tel:{{PHONE_TEL}}">{{PHONE}}</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-mist center" id="offert">
+    <div class="wrap">
+      <div class="reveal">
+        <h2 class="h-section">Begär offert</h2>
+        <p class="subhead">Berätta kort om ditt projekt så återkommer vi.</p>
+      </div>
+      <form class="form-box reveal" id="offert-form" novalidate>
+        <div class="form-grid">
+          <fieldset class="field full">
+            <legend>Verksamhetsområde</legend>
+            <div class="chips">
+              <label class="chip"><input type="checkbox" name="tjanst" value="Markarbeten"><span>Markarbeten</span></label>
+              <label class="chip"><input type="checkbox" name="tjanst" value="Dränering"><span>Dränering</span></label>
+              <label class="chip"><input type="checkbox" name="tjanst" value="Stensättning/murar"><span>Stensättning & murar</span></label>
+              <label class="chip"><input type="checkbox" name="tjanst" value="Bygg/altan"><span>Bygg & altaner</span></label>
+              <label class="chip"><input type="checkbox" name="tjanst" value="Trädgård"><span>Trädgårdsanläggning</span></label>
+            </div>
+          </fieldset>
+          <div class="field">
+            <label for="namn">Namn</label>
+            <input id="namn" name="namn" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="foretag">Företag / förening (valfritt)</label>
+            <input id="foretag" name="foretag" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="telefon">Telefon</label>
+            <input id="telefon" name="telefon" type="tel" autocomplete="tel" required>
+          </div>
+          <div class="field">
+            <label for="epost">E-post (valfritt)</label>
+            <input id="epost" name="epost" type="email" autocomplete="email">
+          </div>
+          <div class="field full">
+            <label for="ort">Ort / adress för uppdraget</label>
+            <input id="ort" name="ort" autocomplete="address-level2" placeholder="t.ex. Varberg">
+          </div>
+          <div class="field full">
+            <label for="meddelande">Beskrivning av uppdraget</label>
+            <textarea id="meddelande" name="meddelande" placeholder="Omfattning, ungefärlig yta, nuvarande underlag, önskad tidplan…"></textarea>
+          </div>
+        </div>
+        <div class="form-foot">
+          <small>Vi behandlar uppgifterna enligt vår <a href="integritetspolicy.html">integritetspolicy</a>.</small>
+          <button class="btn btn-sm" type="submit">Skicka förfrågan</button>
+        </div>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
